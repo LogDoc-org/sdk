@@ -6,12 +6,32 @@
 
     <groupId>ru.gang.logdoc</groupId>
     <artifactId>sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>logdoc-common</id>
+            <url>http://archiva.jwebhelp.ru/repository/logdoc-common</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>logdoc-common</id>
+            <name>logdoc-releases</name>
+            <url>http://archiva.jwebhelp.ru/repository/logdoc-common</url>
+        </repository>
+        <snapshotRepository>
+            <id>logdoc-common</id>
+            <name>logdoc-snapshots</name>
+            <url>http://archiva.jwebhelp.ru/repository/logdoc-common</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
