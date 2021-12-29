@@ -1,7 +1,7 @@
 package ru.gang.logdoc.sdk;
 
 import com.typesafe.config.Config;
-import ru.gang.logdoc.structs.SinkLogEntry;
+import ru.gang.logdoc.structs.LogEntry;
 
 /**
  * @author Denis Danilin | me@loslobos.ru
@@ -10,7 +10,7 @@ import ru.gang.logdoc.structs.SinkLogEntry;
  */
 public interface PipePlugin {
     void configure(Config config) throws Exception;
-    void handle(SinkLogEntry entry) throws Exception;
+    void handle(LogEntry entry) throws Exception;
 
     void setManager(PipePluginManager manager);
 }

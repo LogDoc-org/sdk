@@ -2,7 +2,7 @@ package ru.gang.logdoc.sdk;
 
 import com.typesafe.config.Config;
 import ru.gang.logdoc.structs.DataAddress;
-import ru.gang.logdoc.structs.SinkLogEntry;
+import ru.gang.logdoc.structs.LogEntry;
 
 import java.util.Set;
 import java.util.function.Consumer;
@@ -17,7 +17,7 @@ public interface SinkPlugin {
 
     Set<ConnectionType> sinkTypes();
 
-    void setEntryConsumer(Consumer<SinkLogEntry> entryConsumer);
+    void setEntryConsumer(Consumer<LogEntry> entryConsumer);
 
     void chunk(byte[] data, DataAddress source);
 }

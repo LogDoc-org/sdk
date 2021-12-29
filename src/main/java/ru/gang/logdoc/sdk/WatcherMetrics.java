@@ -1,6 +1,6 @@
 package ru.gang.logdoc.sdk;
 
-import ru.gang.logdoc.structs.SinkLogEntry;
+import ru.gang.logdoc.structs.LogEntry;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +12,6 @@ import java.time.LocalDateTime;
 public final class WatcherMetrics {
     public boolean entryCountable, cycleRepeatable;
     public int totalEntryCounter, cycleEntryCounter, cycleCounter, cycleEntryLimit, cycleLimit;
-    public SinkLogEntry lastMatchedEntry;
+    public LogEntry lastMatchedEntry;
     public LocalDateTime watcherCreated, lastMatched;
 }
