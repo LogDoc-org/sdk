@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 /**
  * @author Denis Danilin | me@loslobos.ru
  * 21.12.2021 13:37
- * structs-lib ☭ sweat and blood
+ * sdk ☭ sweat and blood
  */
 public interface SinkPlugin {
     default void configure(final Config config) { }

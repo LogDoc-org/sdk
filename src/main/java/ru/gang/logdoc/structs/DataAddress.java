@@ -6,6 +6,11 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.Objects;
 
+/**
+ * @author Denis Danilin | me@loslobos.ru
+ * 29.12.2021 11:23
+ * sdk ☭ sweat and blood
+ */
 public final class DataAddress implements Comparable<DataAddress> {
     public final InetSocketAddress address;
     public final SinkId sink;

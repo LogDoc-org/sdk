@@ -1,5 +1,10 @@
 package ru.gang.logdoc.sdk;
 
+/**
+ * @author Denis Danilin | me@loslobos.ru
+ * 29.12.2021 11:23
+ * sdk ☭ sweat and blood
+ */
 public final class SinkId implements Comparable<SinkId> {
     public int port;
     public String name;

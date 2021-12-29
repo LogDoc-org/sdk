@@ -24,23 +24,8 @@ public final class SinkLogEntry {
         fields = new HashMap<>(0);
     }
 
-    public SinkLogEntry(final Map<String, String> map) {
-        if (map.containsKey(FieldTimeStamp)) srcTime = map.remove(FieldTimeStamp);
-        if (map.containsKey(FieldTimeRcv)) rcvTime = map.remove(FieldTimeRcv);
-        if (map.containsKey(FieldIp)) ip = map.remove(FieldIp);
-        if (map.containsKey(FieldProcessId)) pid = map.remove(FieldProcessId);
-        if (map.containsKey(FieldLevel)) level = LogLevel.valueOf(map.remove(FieldLevel));
-        if (map.containsKey(FieldSource)) source = map.remove(FieldSource);
-
-        entry = map.remove(FieldMessage);
-        fields = new HashMap<>(0);
-
-        if (!map.isEmpty())
-            fields.putAll(map);
-    }
-
     public void field(final String name, final String value0) {
-        if (name == null || name.trim().isEmpty())
+        if (notNull(name).isEmpty() || notNull(value0).isEmpty())
             return;
 
         final String value = notNull(value0);

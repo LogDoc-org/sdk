@@ -3,7 +3,9 @@ package ru.gang.logdoc.sdk;
 import ru.gang.logdoc.structs.enums.Proto;
 
 /**
- * Connection type is a pair of protocol and unique name
+ * @author Denis Danilin | me@loslobos.ru
+ * 29.12.2021 11:23
+ * sdk ☭ sweat and blood
  */
 public final class ConnectionType implements Comparable<ConnectionType> {
     public Proto proto;
