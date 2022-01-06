@@ -1,7 +1,7 @@
 package ru.gang.logdoc.sdk;
 
 import com.typesafe.config.Config;
-import ru.gang.logdoc.structs.LogEntry;
+import ru.gang.logdoc.structs.OutLogEntry;
 
 /**
  * @author Denis Danilin | me@loslobos.ru
@@ -10,7 +10,7 @@ import ru.gang.logdoc.structs.LogEntry;
  */
 public interface PipePlugin {
     void configure(Config config) throws Exception;
-    void handle(LogEntry entry) throws Exception;
+    void handle(OutLogEntry entry) throws Exception;
 
     void setManager(PipePluginManager manager);
 }

@@ -11,13 +11,19 @@ import java.util.Map;
  * 29.12.2021 11:23
  * sdk ☭ sweat and blood
  */
-public final class LogEntry {
+public final class InLogEntry {
+    public final String ip;
     public LocalDateTime dateTime;
     public String pid;
     public String source;
     public String entry;
     public LogLevel level;
-    public final Map<String, String> fields = new HashMap<>(0);
+    public final Map<String, String> fields;
+
+    public InLogEntry(final String ip) {
+        this.ip = ip;
+        fields = new HashMap<>(0);
+    }
 
     public boolean isValid() {
         return dateTime != null && entry != null && !entry.trim().isEmpty() && level != null;
