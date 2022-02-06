@@ -3,6 +3,8 @@ package ru.gang.logdoc.sdk;
 import com.typesafe.config.Config;
 import ru.gang.logdoc.structs.LogEntry;
 
+import java.util.Map;
+
 /**
  * @author Denis Danilin | me@loslobos.ru
  * 29.12.2021 11:21
@@ -10,7 +12,8 @@ import ru.gang.logdoc.structs.LogEntry;
  */
 public interface PipePlugin {
     void configure(Config config) throws Exception;
-    void handle(LogEntry entry) throws Exception;
 
-    void setManager(PipePluginManager manager);
+    void watcherActuated(String watcherId, LogEntry lastEntry, WatcherMetrics currentMetrics, Map<String, ?> watcherCtx) throws Exception;
+
+    default void watcherStopped(String watcherId) {}
 }

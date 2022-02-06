@@ -13,11 +13,12 @@ import java.util.function.Consumer;
  * sdk ☭ sweat and blood
  */
 public interface SinkPlugin {
-    default void configure(final Config config) { }
+    default void configure(final Config config, Consumer<LogEntry> entryConsumer) { }
+    default long maxReadBuf() {
+        return 10485760L;
+    }
 
     Set<ConnectionType> sinkTypes();
 
-    void setEntryConsumer(Consumer<LogEntry> entryConsumer);
-
-    void chunk(byte[] data, DataAddress source);
+    byte[] chunk(byte[] data, DataAddress source);
 }
