@@ -1,13 +1,13 @@
 package ru.gang.logdoc.utils;
 
+import ru.gang.logdoc.LogDocConstants;
+
 import java.lang.reflect.Array;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Map;
 
 public class Tools {
-    public static final DateTimeFormatter logTimeFormat = DateTimeFormatter.ofPattern("yyMMddHHmmssSSS");
-
     public static String notNull(final Object o, final String def) {
         if (o == null)
             return def == null ? "" : def.trim();

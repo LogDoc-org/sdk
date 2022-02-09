@@ -1,16 +1,15 @@
 package ru.gang.logdoc.structs;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import ru.gang.logdoc.LogDocConstants;
 import ru.gang.logdoc.structs.enums.LogLevel;
-import ru.gang.logdoc.utils.Tools;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static ru.gang.logdoc.LogDocConstants.*;
+import static ru.gang.logdoc.LogDocConstants.Fields;
+import static ru.gang.logdoc.LogDocConstants.logTimeFormat;
 import static ru.gang.logdoc.utils.Tools.isEmpty;
 import static ru.gang.logdoc.utils.Tools.notNull;
 
@@ -32,20 +31,20 @@ public final class LogEntry {
 
     public LogEntry() {
         fields = new HashMap<>(0);
-        rcvTime = LocalDateTime.now().format(Tools.logTimeFormat);
+        rcvTime = LocalDateTime.now().format(logTimeFormat);
     }
 
     public LogEntry(final Map<String, String> map) {
         this();
 
-        if (map.containsKey(FieldTimeStamp)) srcTime = map.remove(FieldTimeStamp);
-        if (map.containsKey(FieldTimeRcv)) rcvTime = map.remove(FieldTimeRcv);
-        if (map.containsKey(FieldIp)) ip = map.remove(FieldIp);
-        if (map.containsKey(FieldProcessId)) pid = map.remove(FieldProcessId);
-        if (map.containsKey(FieldLevel)) level = LogLevel.valueOf(map.remove(FieldLevel));
-        if (map.containsKey(FieldSource)) source = map.remove(FieldSource);
+        if (map.containsKey(Fields.TimeSrc)) srcTime = map.remove(Fields.TimeSrc);
+        if (map.containsKey(Fields.TimeRcv)) rcvTime = map.remove(Fields.TimeRcv);
+        if (map.containsKey(Fields.Ip)) ip = map.remove(Fields.Ip);
+        if (map.containsKey(Fields.Pid)) pid = map.remove(Fields.Pid);
+        if (map.containsKey(Fields.Level)) level = LogLevel.valueOf(map.remove(Fields.Level));
+        if (map.containsKey(Fields.Source)) source = map.remove(Fields.Source);
 
-        entry = map.remove(FieldMessage);
+        entry = map.remove(Fields.Message);
 
         if (!map.isEmpty())
             fields.putAll(map);
@@ -54,13 +53,13 @@ public final class LogEntry {
     public Map<String, String> asMap() {
         final Map<String, String> map = new HashMap<>(fields);
 
-        if (!isEmpty(ip)) map.put(LogDocConstants.FieldIp, ip);
-        if (!isEmpty(level)) map.put(LogDocConstants.FieldLevel, level.name());
-        if (!isEmpty(entry)) map.put(LogDocConstants.FieldMessage, entry);
-        if (!isEmpty(pid)) map.put(LogDocConstants.FieldProcessId, pid);
-        if (!isEmpty(source)) map.put(LogDocConstants.FieldSource, source);
-        if (!isEmpty(rcvTime)) map.put(LogDocConstants.FieldTimeRcv, rcvTime);
-        if (!isEmpty(srcTime)) map.put(LogDocConstants.FieldTimeStamp, srcTime);
+        if (!isEmpty(ip)) map.put(Fields.Ip, ip);
+        if (!isEmpty(level)) map.put(Fields.Level, level.name());
+        if (!isEmpty(entry)) map.put(Fields.Message, entry);
+        if (!isEmpty(pid)) map.put(Fields.Pid, pid);
+        if (!isEmpty(source)) map.put(Fields.Source, source);
+        if (!isEmpty(rcvTime)) map.put(Fields.TimeRcv, rcvTime);
+        if (!isEmpty(srcTime)) map.put(Fields.TimeSrc, srcTime);
 
         return map;
     }
@@ -81,25 +80,25 @@ public final class LogEntry {
         final String value = notNull(value0);
 
         switch (name.trim()) {
-            case FieldLevel:
+            case Fields.Level:
                 level = LogLevel.valueOf(value);
                 break;
-            case FieldIp:
+            case Fields.Ip:
                 ip = value;
                 break;
-            case FieldMessage:
+            case Fields.Message:
                 entry = value;
                 break;
-            case FieldProcessId:
+            case Fields.Pid:
                 pid = value;
                 break;
-            case FieldSource:
+            case Fields.Source:
                 source = notNull(value, "no_source");
                 break;
-            case FieldTimeStamp:
+            case Fields.TimeSrc:
                 srcTime = value;
                 break;
-            case FieldTimeRcv:
+            case Fields.TimeRcv:
                 rcvTime = value;
                 break;
             default:

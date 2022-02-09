@@ -10,11 +10,13 @@ import java.time.format.DateTimeFormatter;
 public interface LogDocConstants {
     DateTimeFormatter logTimeFormat = DateTimeFormatter.ofPattern("yyMMddHHmmssSSS");
 
-    String FieldTimeStamp = "time_src";
-    String FieldProcessId = "source_id";
-    String FieldSource = "source_name";
-    String FieldLevel = "level";
-    String FieldMessage = "log_message";
-    String FieldTimeRcv = "time_rcv";
-    String FieldIp = "source_ip";
+    interface Fields {
+        String TimeSrc = "tsrc";
+        String Pid = "pid";
+        String Source = "src";
+        String Level = "lvl";
+        String Message = "msg";
+        String TimeRcv = "trcv";
+        String Ip = "ip";
+    }
 }
