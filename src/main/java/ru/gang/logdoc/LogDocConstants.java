@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter;
  * sdk ☭ sweat and blood
  */
 public interface LogDocConstants {
+    byte[] header = new byte[] {(byte) 6, (byte) 3};
+
     DateTimeFormatter logTimeFormat = DateTimeFormatter.ofPattern("yyMMddHHmmssSSS");
 
     interface Fields {
