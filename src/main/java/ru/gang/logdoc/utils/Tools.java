@@ -43,6 +43,13 @@ public class Tools {
         os.write((byte) (in));
     }
 
+    public static void writeUtf(final String s, final OutputStream os) throws IOException {
+        final byte[] data = Tools.notNull(s).getBytes(StandardCharsets.UTF_8);
+
+        writeShort((short) data.length, os);
+        os.write(data);
+    }
+
     public static long asLong(final byte[] buf) {
         if (isEmpty(buf) || buf.length < 8)
             return 0;
