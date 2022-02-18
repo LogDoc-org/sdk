@@ -21,4 +21,13 @@ public interface SinkPlugin {
     Set<ConnectionType> sinkTypes();
 
     byte[] chunk(byte[] data, DataAddress source);
+
+    /**
+     * Marks if this plugin should act like http actor - close connection after handling request.
+     *
+     * @return boolean - true, if connection should be closed right after handling request
+     */
+    default boolean isDeterminated() {
+        return false;
+    }
 }

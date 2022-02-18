@@ -81,7 +81,7 @@ public final class LogEntry {
 
         switch (name.trim()) {
             case Fields.Level:
-                level = LogLevel.valueOf(value);
+                level = LogLevel.asNullLog(value);
                 break;
             case Fields.Ip:
                 ip = value;
