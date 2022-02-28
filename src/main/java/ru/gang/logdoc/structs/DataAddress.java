@@ -15,9 +15,25 @@ public final class DataAddress implements Comparable<DataAddress> {
     public final InetSocketAddress address;
     public final SinkId sink;
 
+    private volatile String ip, host;
+
     public DataAddress(final SocketAddress address, final SinkId sink) {
         this.address = (InetSocketAddress) address;
         this.sink = sink;
+    }
+
+    public String ip() {
+        if (ip == null)
+            ip = address.getAddress().getHostAddress();
+
+        return ip;
+    }
+
+    public String host() {
+        if (host == null)
+            host = address.getHostName();
+
+        return host;
     }
 
     @Override
