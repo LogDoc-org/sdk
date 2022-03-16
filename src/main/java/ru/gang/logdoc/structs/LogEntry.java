@@ -25,6 +25,7 @@ public final class LogEntry {
     public String pid;
     public String source;
     public String entry;
+    public String appName;
     public LogLevel level;
 
     private final Map<String, String> fields;
@@ -43,6 +44,7 @@ public final class LogEntry {
         if (map.containsKey(Fields.Pid)) pid = map.remove(Fields.Pid);
         if (map.containsKey(Fields.Level)) level = LogLevel.valueOf(map.remove(Fields.Level));
         if (map.containsKey(Fields.Source)) source = map.remove(Fields.Source);
+        if (map.containsKey(Fields.AppName)) appName = map.remove(Fields.AppName);
 
         entry = map.remove(Fields.Message);
 
@@ -60,6 +62,7 @@ public final class LogEntry {
         if (!isEmpty(source)) map.put(Fields.Source, source);
         if (!isEmpty(rcvTime)) map.put(Fields.TimeRcv, rcvTime);
         if (!isEmpty(srcTime)) map.put(Fields.TimeSrc, srcTime);
+        if (!isEmpty(appName)) map.put(Fields.AppName, appName);
 
         return map;
     }
@@ -101,6 +104,9 @@ public final class LogEntry {
             case Fields.TimeRcv:
                 rcvTime = value;
                 break;
+            case Fields.AppName:
+                appName = value;
+                break;
             default:
                 fields.put(name, value);
                 break;
@@ -108,6 +114,28 @@ public final class LogEntry {
     }
 
     public String field(final String name) {
+        if (isEmpty(name))
+            return "";
+
+        switch (name) {
+            case Fields.AppName:
+                return appName;
+            case Fields.Ip:
+                return ip;
+            case Fields.Message:
+                return entry;
+            case Fields.Source:
+                return source;
+            case Fields.Level:
+                return level.name();
+            case Fields.Pid:
+                return pid;
+            case Fields.TimeRcv:
+                return rcvTime;
+            case Fields.TimeSrc:
+                return srcTime;
+        }
+
         return fields.get(name);
     }
 
@@ -125,6 +153,7 @@ public final class LogEntry {
                 ", source='" + source + '\'' +
                 ", level=" + level +
                 ", entry='" + entry + '\'' +
+                ", appName='" + appName + '\'' +
                 ", fields=" + fields +
                 '}';
     }

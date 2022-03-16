@@ -20,5 +20,6 @@ public interface LogDocConstants {
         String Message = "msg";
         String TimeRcv = "trcv";
         String Ip = "ip";
+        String AppName = "app";
     }
 }
