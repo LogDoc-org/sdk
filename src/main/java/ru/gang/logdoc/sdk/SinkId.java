@@ -6,10 +6,22 @@ import java.util.Objects;
  * @author Denis Danilin | me@loslobos.ru
  * 29.12.2021 11:23
  * sdk ☭ sweat and blood
+ *
+ * Sink is a single open socket accepting incoming logs,
+ * SinkId is its unique ID
  */
 public final class SinkId implements Comparable<SinkId> {
+    /**
+     * Socket's port
+     */
     public int port;
+    /**
+     * Unique name
+     */
     public String name;
+    /**
+     * Socket's parameters
+     */
     public ConnectionType type;
 
     public SinkId() { }

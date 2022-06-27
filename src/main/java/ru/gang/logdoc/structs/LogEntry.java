@@ -66,11 +66,6 @@ public final class LogEntry {
         return map;
     }
 
-//    @JsonIgnore
-//    public boolean isValid() {
-//        return srcTime != null && rcvTime != null && !isEmpty(entry) && level != null;
-//    }
-
     public Collection<Map.Entry<String, String>> fields() {
         return fields.entrySet();
     }
@@ -144,7 +139,7 @@ public final class LogEntry {
 
     @Override
     public String toString() {
-        return "SinkLogEntry{" +
+        return "LogEntry{" +
                 "srcTime='" + srcTime + '\'' +
                 ", rcvTime='" + rcvTime + '\'' +
                 ", ip='" + ip + '\'' +

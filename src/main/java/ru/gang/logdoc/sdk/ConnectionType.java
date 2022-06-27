@@ -8,9 +8,17 @@ import java.util.Objects;
  * @author Denis Danilin | me@loslobos.ru
  * 29.12.2021 11:23
  * sdk ☭ sweat and blood
+ *
+ * Named tag fully describe one socket connection
  */
 public final class ConnectionType implements Comparable<ConnectionType> {
+    /**
+     * Mid-level type of connection, more logic term than technical
+     */
     public Proto proto;
+    /**
+     * Unique name
+     */
     public String name;
 
     public ConnectionType() {

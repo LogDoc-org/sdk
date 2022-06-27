@@ -8,12 +8,20 @@ import java.time.LocalDateTime;
  * @author Denis Danilin | me@loslobos.ru
  * 21.12.2021 13:30
  * sdk ☭ sweat and blood
+ *
+ * Aggregated instant state of a watcher
  */
 public final class WatcherMetrics {
-    public boolean entryCountable, cycleRepeatable;
-    public int totalEntryCounter, cycleEntryCounter, cycleCounter, cycleEntryLimit, cycleLimit;
+    public boolean entryCountable;
+    public boolean cycleRepeatable;
+    public int totalEntryCounter;
+    public int cycleEntryCounter;
+    public int cycleCounter;
+    public int cycleEntryLimit;
+    public int cycleLimit;
     public LogEntry lastMatchedEntry;
-    public LocalDateTime watcherCreated, lastMatched;
+    public LocalDateTime watcherCreated;
+    public LocalDateTime lastMatched;
 
     public WatcherMetrics() {
     }

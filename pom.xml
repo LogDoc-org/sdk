@@ -8,6 +8,7 @@
     <artifactId>sdk</artifactId>
     <version>1.1.9</version>
 
+    <name>Logdoc SDK</name>
     <description>LogDoc.org project SDK</description>
     <url>http://logdoc.org/doc/protocol</url>
     <inceptionYear>2022</inceptionYear>
@@ -21,11 +22,38 @@
     </licenses>
     <developers>
         <developer>
-            <id>dd</id>
             <name>Denis Danilin</name>
             <email>dd@logdoc.org</email>
+            <organization>Logdoc</organization>
+        </developer>
+        <developer>
+            <name>Igor Starikovsky</name>
+            <email>sand@logdoc.org</email>
+            <organization>Logdoc</organization>
+        </developer>
+        <developer>
+            <name>Alexey Anufrienko</name>
+            <email>billy@logdoc.org</email>
+            <organization>Logdoc</organization>
+        </developer>
+        <developer>
+            <name>Evgeny Kozinchenko</name>
+            <email>inerc@logdoc.org</email>
+            <organization>Logdoc</organization>
+        </developer>
+        <developer>
+            <name>Andrey Nikulin</name>
+            <email>mekluho@logdoc.org</email>
+            <organization>Logdoc</organization>
         </developer>
     </developers>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com:logdocpub/sdk.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:logdocpub/sdk.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/logdocpub/sdk</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -39,10 +67,6 @@
     </properties>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
