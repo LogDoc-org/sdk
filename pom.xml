@@ -49,7 +49,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com:logdocpub/sdk.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:logdocpub/sdk.git</developerConnection>
-        <tag>sdk-1.1.10</tag>
+        <tag>sdk-1.1.10a</tag>
         <url>https://github.com/logdocpub/sdk</url>
     </scm>
 
