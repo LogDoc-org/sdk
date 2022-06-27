@@ -1,6 +1,6 @@
-package ru.gang.logdoc.structs;
+package org.logdoc.structs;
 
-import ru.gang.logdoc.sdk.SinkId;
+import org.logdoc.sdk.SinkId;
 
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;

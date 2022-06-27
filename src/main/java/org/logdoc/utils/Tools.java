@@ -1,4 +1,4 @@
-package ru.gang.logdoc.utils;
+package org.logdoc.utils;
 
 import java.io.IOException;
 import java.io.OutputStream;

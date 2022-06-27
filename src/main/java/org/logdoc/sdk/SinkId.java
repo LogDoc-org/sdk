@@ -1,4 +1,4 @@
-package ru.gang.logdoc.sdk;
+package org.logdoc.sdk;
 
 import java.util.Objects;
 

@@ -1,6 +1,6 @@
-package ru.gang.logdoc.sdk;
+package org.logdoc.sdk;
 
-import ru.gang.logdoc.structs.enums.Proto;
+import org.logdoc.structs.enums.Proto;
 
 import java.util.Objects;
 

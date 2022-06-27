@@ -1,7 +1,7 @@
-package ru.gang.logdoc.sdk;
+package org.logdoc.sdk;
 
 import com.typesafe.config.Config;
-import ru.gang.logdoc.structs.LogEntry;
+import org.logdoc.structs.LogEntry;
 
 import java.util.Map;
 

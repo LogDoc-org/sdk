@@ -1,4 +1,4 @@
-package ru.gang.logdoc.structs.enums;
+package org.logdoc.structs.enums;
 
 /**
  * @author Denis Danilin | me@loslobos.ru

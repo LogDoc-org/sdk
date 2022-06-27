@@ -1,4 +1,4 @@
-package ru.gang.logdoc;
+package org.logdoc;
 
 import java.time.format.DateTimeFormatter;
 

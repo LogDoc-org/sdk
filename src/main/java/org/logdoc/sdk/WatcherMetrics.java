@@ -1,6 +1,6 @@
-package ru.gang.logdoc.sdk;
+package org.logdoc.sdk;
 
-import ru.gang.logdoc.structs.LogEntry;
+import org.logdoc.structs.LogEntry;
 
 import java.time.LocalDateTime;
 
