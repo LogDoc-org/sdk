@@ -15,7 +15,7 @@ public final class DataAddress implements Comparable<DataAddress> {
     public final InetSocketAddress address;
     public final SinkId sink;
 
-    private volatile String ip, host;
+    private String ip, host;
 
     public DataAddress(final SocketAddress address, final SinkId sink) {
         this.address = (InetSocketAddress) address;
@@ -23,14 +23,14 @@ public final class DataAddress implements Comparable<DataAddress> {
     }
 
     public String ip() {
-        if (ip == null)
+        if (ip == null && address != null)
             ip = address.getAddress().getHostAddress();
 
         return ip;
     }
 
     public String host() {
-        if (host == null)
+        if (host == null && address != null)
             host = address.getHostName();
 
         return host;

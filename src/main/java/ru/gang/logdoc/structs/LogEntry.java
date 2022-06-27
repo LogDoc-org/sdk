@@ -1,6 +1,5 @@
 package ru.gang.logdoc.structs;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import ru.gang.logdoc.structs.enums.LogLevel;
 
 import java.time.LocalDateTime;
@@ -67,10 +66,10 @@ public final class LogEntry {
         return map;
     }
 
-    @JsonIgnore
-    public boolean isValid() {
-        return srcTime != null && rcvTime != null && !isEmpty(entry) && level != null;
-    }
+//    @JsonIgnore
+//    public boolean isValid() {
+//        return srcTime != null && rcvTime != null && !isEmpty(entry) && level != null;
+//    }
 
     public Collection<Map.Entry<String, String>> fields() {
         return fields.entrySet();

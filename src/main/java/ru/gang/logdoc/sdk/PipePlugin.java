@@ -13,7 +13,11 @@ import java.util.Map;
 public interface PipePlugin {
     void configure(Config config) throws Exception;
 
-    void watcherActuated(String watcherId, LogEntry lastEntry, WatcherMetrics currentMetrics, Map<String, ?> watcherCtx) throws Exception;
+    void fire(String watcherId, LogEntry entry, WatcherMetrics metrics, Map<String, ?> ctx) throws Exception;
+
+    default void watcherStarted(String watcherId) {}
+
+    default void watcherCycled(String watcherId) {}
 
     default void watcherStopped(String watcherId) {}
 }
