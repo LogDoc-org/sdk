@@ -33,10 +33,10 @@ public interface PipePlugin {
      * @param watcherId ID of a listener or watcher which requirements are met by entry
      * @param entry Logging event, caused listener or watcher to apply
      * @param metrics Current state of the listener or watcher
-     * @param ctx Current context of the listener or watcher
+     * @param ctx Current context of the listener or watcher (values of the parameters)
      * @throws Exception plugin may throw any error, it's going to be handled by self LogDoc's logger
      */
-    void fire(String watcherId, LogEntry entry, WatcherMetrics metrics, Map<String, ?> ctx) throws Exception;
+    void fire(String watcherId, LogEntry entry, WatcherMetrics metrics, Map<String, String> ctx) throws Exception;
 
     /**
      * Invoked on each listener/watcher creation
