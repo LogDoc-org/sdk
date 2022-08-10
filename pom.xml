@@ -4,7 +4,7 @@
 
     <groupId>org.logdoc</groupId>
     <artifactId>sdk</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
 
     <name>Logdoc SDK</name>
     <description>LogDoc.org project SDK</description>
@@ -49,7 +49,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/logdocpub/sdk.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/logdocpub/sdk.git</developerConnection>
-        <tag>sdk-1.0.0</tag>
+        <tag>sdk-1.0.3</tag>
         <url>https://github.com/logdocpub/sdk</url>
     </scm>
 
