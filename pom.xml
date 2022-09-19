@@ -47,10 +47,10 @@
     </developers>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/logdocpub/sdk.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/logdocpub/sdk.git</developerConnection>
-        <tag>sdk-1.0.0</tag>
-        <url>https://github.com/logdocpub/sdk</url>
+        <connection>scm:git:ssh://git@github.com/LogDoc-org/sdk.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/LogDoc-org/sdk.git</developerConnection>
+        <tag>sdk-1.0.4</tag>
+        <url>https://github.com/LogDoc-org/sdk</url>
     </scm>
 
     <properties>
