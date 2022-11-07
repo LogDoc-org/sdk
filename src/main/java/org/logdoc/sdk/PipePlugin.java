@@ -1,7 +1,6 @@
 package org.logdoc.sdk;
 
 import com.typesafe.config.Config;
-import org.logdoc.structs.LogEntry;
 
 import java.util.Map;
 
@@ -9,7 +8,6 @@ import java.util.Map;
  * @author Denis Danilin | me@loslobos.ru
  * 29.12.2021 11:21
  * sdk ☭ sweat and blood
- *
  * PipePlugin is an "output" plugin, which handle each event passing through listener and/or watcher.
  * Plugin supposed to be a singleton, e.g. it borns when main LogDoc service starts and then just called on each listener/watcher reaction.
  *
