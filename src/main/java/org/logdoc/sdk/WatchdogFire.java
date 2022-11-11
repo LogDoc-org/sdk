@@ -10,7 +10,7 @@ import java.util.Collection;
  * 21.12.2021 13:30
  * sdk ☭ sweat and blood
  *
- * Aggregated instant state of a watcher
+ * Aggregated instant state of a watchdog -- name and all matched entries
  */
 public final class WatchdogFire {
     public final String watchdogName;
