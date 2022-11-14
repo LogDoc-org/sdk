@@ -6,7 +6,6 @@ import java.util.Objects;
  * @author Denis Danilin | me@loslobos.ru
  * 29.12.2021 11:23
  * sdk ☭ sweat and blood
- *
  * Sink is a single open socket accepting incoming logs,
  * SinkId is its unique ID
  */
@@ -16,25 +15,20 @@ public final class SinkId implements Comparable<SinkId> {
      */
     public int port;
     /**
-     * Unique name
-     */
-    public String name;
-    /**
      * Socket's parameters
      */
     public ConnectionType type;
 
     public SinkId() { }
 
-    public SinkId(final int port, final String name, final ConnectionType type) {
+    public SinkId(final int port, final ConnectionType type) {
         this.port = port;
-        this.name = name;
         this.type = type;
     }
 
     @Override
     public String toString() {
-        return "[" + name + " :: " + type + " @ " + port + ']';
+        return "[" + type + " @ " + port + ']';
     }
 
     @Override
@@ -52,12 +46,7 @@ public final class SinkId implements Comparable<SinkId> {
 
     @Override
     public int compareTo(final SinkId o) {
-        int res = name.compareTo(o.name);
-
-        if (res != 0)
-            return res;
-
-        res = Integer.compare(port, o.port);
+        int res = Integer.compare(port, o.port);
 
         if (res != 0)
             return res;
