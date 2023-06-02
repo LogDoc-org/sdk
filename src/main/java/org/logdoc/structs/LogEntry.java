@@ -1,15 +1,15 @@
 package org.logdoc.structs;
 
-import org.logdoc.structs.enums.LogLevel;
 import org.logdoc.LogDocConstants;
-import org.logdoc.utils.Tools;
+import org.logdoc.structs.enums.LogLevel;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.logdoc.utils.Tools.notNull;
+import static org.logdoc.helpers.Texts.isEmpty;
+import static org.logdoc.helpers.Texts.notNull;
 
 /**
  * @author Denis Danilin | me@loslobos.ru
@@ -53,14 +53,14 @@ public final class LogEntry {
     public Map<String, String> asMap() {
         final Map<String, String> map = new HashMap<>(fields);
 
-        if (!Tools.isEmpty(ip)) map.put(LogDocConstants.Fields.Ip, ip);
-        if (!Tools.isEmpty(level)) map.put(LogDocConstants.Fields.Level, level.name());
-        if (!Tools.isEmpty(entry)) map.put(LogDocConstants.Fields.Message, entry);
-        if (!Tools.isEmpty(pid)) map.put(LogDocConstants.Fields.Pid, pid);
-        if (!Tools.isEmpty(source)) map.put(LogDocConstants.Fields.Source, source);
-        if (!Tools.isEmpty(rcvTime)) map.put(LogDocConstants.Fields.TimeRcv, rcvTime);
-        if (!Tools.isEmpty(srcTime)) map.put(LogDocConstants.Fields.TimeSrc, srcTime);
-        if (!Tools.isEmpty(appName)) map.put(LogDocConstants.Fields.AppName, appName);
+        if (!isEmpty(ip)) map.put(LogDocConstants.Fields.Ip, ip);
+        if (!isEmpty(level)) map.put(LogDocConstants.Fields.Level, level.name());
+        if (!isEmpty(entry)) map.put(LogDocConstants.Fields.Message, entry);
+        if (!isEmpty(pid)) map.put(LogDocConstants.Fields.Pid, pid);
+        if (!isEmpty(source)) map.put(LogDocConstants.Fields.Source, source);
+        if (!isEmpty(rcvTime)) map.put(LogDocConstants.Fields.TimeRcv, rcvTime);
+        if (!isEmpty(srcTime)) map.put(LogDocConstants.Fields.TimeSrc, srcTime);
+        if (!isEmpty(appName)) map.put(LogDocConstants.Fields.AppName, appName);
 
         return map;
     }
@@ -70,10 +70,10 @@ public final class LogEntry {
     }
 
     public void field(final String name, final String value0) {
-        if (Tools.isEmpty(name) || Tools.isEmpty(value0))
+        if (isEmpty(name) || isEmpty(value0))
             return;
 
-        final String value = Tools.notNull(value0);
+        final String value = notNull(value0);
 
         switch (name.trim()) {
             case LogDocConstants.Fields.Level:
@@ -89,7 +89,7 @@ public final class LogEntry {
                 pid = value;
                 break;
             case LogDocConstants.Fields.Source:
-                source = Tools.notNull(value, "no_source");
+                source = notNull(value, "no_source");
                 break;
             case LogDocConstants.Fields.TimeSrc:
                 srcTime = value;
@@ -107,7 +107,7 @@ public final class LogEntry {
     }
 
     public String field(final String name) {
-        if (Tools.isEmpty(name))
+        if (isEmpty(name))
             return "";
 
         switch (name) {

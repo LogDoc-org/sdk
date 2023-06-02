@@ -77,6 +77,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.logdoc</groupId>
+            <artifactId>code-helpers</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
             <version>[1.5.0-b01,)</version>
@@ -91,7 +97,6 @@
     </dependencies>
 
     <profiles>
-        <!-- GPG Signature on release -->
         <profile>
             <id>release-sign-artifacts</id>
             <activation>
