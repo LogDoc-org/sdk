@@ -7,5 +7,5 @@ SDK aimed to help developers to create custom plugins for logdoc.
     <dependency>
         <groupId>org.logdoc</groupId>
         <artifactId>sdk</artifactId>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
     </dependency>
