@@ -28,3 +28,9 @@
 2. Положите jar в директорию загрузки плагинов
 3. Сообщите LogDoc-у о новом плагине через конф.файл: добавьте туда строку `logdoc.plugins.pipe.enabled += com.company.MyPipePlugin`
 4. Перезапустите LogDoc
+
+## Примеры
+sink плагины: https://github.com/LogDoc-org/sink-plugins  
+
+pipe плагины: https://github.com/LogDoc-org/pipe-plugins  
+*описание конфигураций: https://github.com/LogDoc-org/pipe-plugins/tree/main/src/main/resources*
