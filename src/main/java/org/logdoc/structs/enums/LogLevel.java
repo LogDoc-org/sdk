@@ -6,7 +6,7 @@ package org.logdoc.structs.enums;
  * sdk ☭ sweat and blood
  */
 public enum LogLevel {
-    DEBUG, INFO, LOG, WARN, ERROR, SEVERE, PANIC;
+    DEBUG, INFO, LOG, WARN, ERROR, SEVERE, PANIC, TRACE;
 
     public static LogLevel asNullLog(String s) {
         try {return valueOf(s.trim().toUpperCase());} catch (final Exception ignore) {}
